@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang='da'>
+
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+	<meta name='theme-color' content='#333333'>
+
+	%sapper.base%
+
+	<link rel='stylesheet' href='global.css'>
+	<link rel='manifest' href='manifest.json' crossorigin='use-credentials'>
+	<link rel="icon" type="image/svg+xml" href="kenneth.svg" sizes="any">
+
+	<style>
+		@font-face {
+			font-family: "calibre";
+			src: url("fonts/calibre-web-regular-subset.woff") format('woff');
+		}
+
+		@font-face {
+			font-family: "domain";
+			src: url("fonts/domaine-text-web-light-subset.woff") format('woff');
+		}
+
+		body {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: 10vw 60vw 10vw;
+			grid-gap: 1em;
+			background-color: #0c334d;
+			color: white;
+		}
+
+		header,
+		footer {
+			grid-column: 1 / span 5;
+		}
+
+		nav {}
+
+		main {
+			grid-column: 1 / span 3;
+			padding-left: 10rem;
+		}
+
+		aside {
+			grid-column: span 2;
+		}
+
+		@media (max-width: 700px) {
+
+			main,
+			aside {
+				grid-column: 1 / span 5;
+			}
+
+		}
+
+		/* Design */
+		nav li {
+			display: inline;
+			padding: 1rem;
+			margin: 0;
+			color: #fbe5e2;
+		}
+
+		nav li a {
+			color: #fbe5e2;
+			text-decoration: none;
+		}
+
+		nav ul {
+			display: inline;
+			padding: 0;
+			margin: 0;
+		}
+
+		.subscribe {
+			display: grid;
+		}
+
+		.tag {
+			color: #ffada6;
+			font-family: "domain";
+			font-size: 4em;
+			line-height: 1.1;
+			font-weight: 300;
+			margin-top: 0;
+			width: 60%;
+			align-self: center;
+		}
+
+		#mc_embed_signup {
+			max-width: 500px;
+		}
+
+		.intro {
+			display: inline-flex;
+		}
+
+		input {
+			border: 2px solid #ffada6;
+			height: 45px;
+			width: 100%;
+			color: #fff;
+			background-color: #0c334d;
+			font-size: 1.5em;
+			padding-left: 1rem;
+			font-family: "domain";
+			max-width: 500px;
+		}
+
+		input[type=submit] {
+			background-color: #ffada6;
+			color: #0c334d;
+			max-width: 500px;
+			width: 50%;
+		}
+
+		label {
+			color: #fbe5e2;
+		}
+
+		.reviews {
+			font-family: "calibre";
+			width: 80%;
+			color: #fbe5e2;
+			margin-bottom: 3rem;
+			margin-top: 4rem;
+		}
+
+		.review {
+			display: flex;
+			float: left;
+			width: 100%;
+		}
+
+		.review-alt {
+			display: flex;
+			float: right;
+		}
+
+		.review-text {
+			align-self: center;
+			font-size: 1.5rem;
+		}
+
+		.reviews a {
+			color: #fbe5e2;
+		}
+
+		.logo {
+			font-family: "domain";
+			font-size: 4em;
+			line-height: 1.1;
+			font-weight: 300;
+			padding-left: 10rem;
+			width: 60%;
+			align: left;
+		}
+
+		.menu-item {
+			font-size: 2rem;
+		}
+
+		.active {
+			text-decoration: underline;
+		}
+
+
+		@media only screen and (max-width: 767px) and (orientation: portrait) {
+			/* portrait phones */
+
+		}
+
+		/* Monitors with screen width 1366px or above */
+
+
+		/*  Tablets in landscape mode, older desktop monitors */
+
+		@media only screen and (min-width: 1024px) and (max-width: 1365px) {}
+
+		/*  Tablets in portrait mode, large display smartphones landscape mode */
+
+		@media only screen and (min-width: 768px) and (max-width: 1023px) {
+			.logo {
+				font-size: 2rem;
+			}
+
+			main {
+				padding-left: 3rem;
+			}
+
+			.menu-item {
+				font-size: 1rem;
+			}
+
+			#mc_embed_signup {
+				max-width: 300px;
+			}
+
+		}
+
+		/*  Smartphones in landscape mode */
+
+		@media only screen and (min-width: 421px) and (max-width: 767px) {
+			.logo {
+				font-size: 2rem;
+			}
+
+			.menu-item {
+				font-size: 1rem;
+			}
+
+			main {
+				padding-left: 2rem;
+			}
+
+			#mc_embed_signup {
+				max-width: 300px;
+			}
+
+		}
+
+		/*  Smartphones in portrait mode  */
+
+		@media only screen and (max-width: 420px) {
+			.logo {
+				font-size: 2rem;
+			}
+
+			.menu-item {
+				font-size: 1rem;
+			}
+		}
+	</style>
+
+	<!-- Sapper generates a <style> tag containing critical CSS
+	     for the current page. CSS for the rest of the app is
+	     lazily loaded when it precaches secondary pages -->
+	%sapper.styles%
+
+	<!-- This contains the contents of the <svelte:head> component, if
+	     the current page has one -->
+	%sapper.head%
+</head>
+
+<body>
+	<!-- The application will be rendered inside this element,
+			 because `src/client.js` references it -->
+
+	%sapper.html%
+
+
+	<!-- Sapper creates a <script> tag containing `src/client.js`
+	     and anything else it needs to hydrate the app and
+	     initialise the router -->
+	%sapper.scripts%
+</body>
+
+</html>
